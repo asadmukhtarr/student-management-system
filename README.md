@@ -30,3 +30,13 @@
         - A : Angular ( typescript) : Google | AngularJS : ( Javascript ) :-
         - R : ReactJS : Facebook :-
         - N : NodeJS :-
+
+# Lesson # 2:
+
+    - Download and install gitbash : (optional) : https://git-scm.com/downloads
+    - Download VS Code : https://code.visualstudio.com/download:
+    - What is Html:
+        - Hyper Text Markup Language : Frontend Develop
+        - Bas Tags : For Example : For Open Tag :<asad> |  For Close Tag : </asad> | Non-closeable Tags <asad />.
+        - First page of website: index.html ( Developer Language ) | Landing page  , Home Page => Index.html
+        - Keep in mind always close tag as per requirements ..
