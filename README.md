@@ -40,3 +40,4 @@
         - Bas Tags : For Example : For Open Tag :<asad> |  For Close Tag : </asad> | Non-closeable Tags <asad />.
         - First page of website: index.html ( Developer Language ) | Landing page  , Home Page => Index.html
         - Keep in mind always close tag as per requirements ..
+    - Assignment # 1: create a Simple html page
