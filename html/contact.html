@@ -5,21 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .box {
+        border: 1px solid black;
+        padding: 1%;
+        background-color: rebeccapurple;
+        color:white;
+        margin: 1%;
+    }
+    .navbar {
+        list-style-type: none;
+        margin-bottom: 2%;
+        font-size: 18px;
+        display: flex;
+    }
+    .navbar > li {
+        margin-left: 1%;
+        margin-top: 0%;
+    }
+    .navbar > li :hover {
+        background-color:white;
+        color:black;
+        padding: 10%;
+        margin: 0px;
+    }
+    .navbar > li > a {
+        text-decoration: none;
+        color:white;
+    }
+    .nav {
+        background-color: black;
+        height: 25px;
+    }
+    .slide {
+        height: 300px;
+        background-color: grey;
+        margin-top: 0;
+        padding: 5%;
+    }
+    .header {
+        height: 100px;
+        border:1px solid #000;
+    }
+</style>
 <body>
-    <ul style="list-style-type: none;">
-        <li style="float: left; margin:1%;">
-            <a href="index.html" style="text-decoration: none; color:black;">Home</a>
-        </li>
-        <li style="float: left; margin:1%;">
-            <a href="about.html" style="text-decoration: none; color:black;">About</a>
-        </li>
-        <li style="float: left; margin:1%;">
-            <a href="products.html" style="text-decoration: none; color:black;">Products</a>
-        </li>
-        <li style="float: left; margin:1%;">
-            <a href="contact.html" style="text-decoration: none; color:black;">Contact</a>
-        </li>
-    </ul>
-    <h2>Contact</h2>
+    <div class="header"></div>
+   <div class="nav">
+        <ul class="navbar">
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Products</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+   </div>
+   <div class="slide">
+        <h2>Hellow Friends !</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque ipsum quibusdam, deserunt at obcaecati minus aliquam sapiente debitis ipsa. Sit, voluptates modi. Nihil porro excepturi sequi, aperiam praesentium accusamus blanditiis provident nemo tempora adipisci autem distinctio obcaecati, deserunt atque laudantium inventore repellat cum possimus iure dolores perferendis id. Quia eaque dolore eos soluta, voluptatem tempora molestiae maxime sed nesciunt sunt fugit incidunt accusantium minima? Exercitationem est perspiciatis quae eos nesciunt hic porro consectetur, reiciendis facere saepe nihil iste eius eaque tempora maiores non quod culpa expedita doloremque. Amet eligendi assumenda doloribus facere iste magnam labore temporibus veritatis, unde maxime molestiae.
+        </p>
+   </div>
+
+    <!-- <div class="box">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit blanditiis ex eum, ipsa reiciendis saepe quos eius, nobis, aspernatur fuga magnam. Iusto quis, illum placeat, illo laborum magni itaque possimus ea, nam reiciendis exercitationem ratione vero sapiente voluptate facere dolorem cupiditate sit doloremque enim at vel distinctio repellendus eos ipsa! Harum est nostrum facilis provident quasi adipisci ut consectetur laudantium similique omnis magni quidem sed fuga velit, reiciendis earum et eum, deserunt vitae illo exercitationem. Natus consequatur tempora odio fugiat quae facere esse. Alias totam earum similique nulla explicabo enim sapiente saepe in laborum sint architecto, facere culpa, quisquam obcaecati!
+        </p>
+    </div>
+    <div class="box">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit blanditiis ex eum, ipsa reiciendis saepe
+            quos eius, nobis, aspernatur fuga magnam. Iusto quis, illum placeat, illo laborum magni itaque possimus ea, nam
+            reiciendis exercitationem ratione vero sapiente voluptate facere dolorem cupiditate sit doloremque enim at vel
+            distinctio repellendus eos ipsa! Harum est nostrum facilis provident quasi adipisci ut consectetur laudantium
+            similique omnis magni quidem sed fuga velit, reiciendis earum et eum, deserunt vitae illo exercitationem. Natus
+            consequatur tempora odio fugiat quae facere esse. Alias totam earum similique nulla explicabo enim sapiente
+            saepe in laborum sint architecto, facere culpa, quisquam obcaecati!
+        </p>
+    </div> -->
 </body>
 </html>
