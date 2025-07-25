@@ -1,0 +1,12 @@
+/* Internal CSS */
+.saif {
+    background-color: rgb(128, 0, 128);
+    height: 100px;
+    width: 100%;
+    border: 2px solid black;
+}
+
+.saif:hover {
+    background-color: red;
+    border: 1px solid black;
+}

@@ -1,6 +1,6 @@
 # Full Stack Web Development Batch 35 By Webeducatorz
 
-# Lesson # 1:
+# Introduction to full stack web development course:
 
        - Steps For Website Development Proccess: Ecommerce website :
            - Step # 1 - Documentation :
@@ -31,7 +31,7 @@
         - R : ReactJS : Facebook :-
         - N : NodeJS :-
 
-# Lesson # 2:
+# Installation requirements + html introduction:
 
     - Download and install gitbash : (optional) : https://git-scm.com/downloads
     - Download VS Code : https://code.visualstudio.com/download:
@@ -41,3 +41,18 @@
         - First page of website: index.html ( Developer Language ) | Landing page  , Home Page => Index.html
         - Keep in mind always close tag as per requirements ..
     - Assignment # 1: create a Simple html page
+
+# CSS Types :
+
+    - There are three types of css
+        - Internal CSS = File k ander style k tag ko istimal kr k ..
+        - External CSS = Different file ..
+        - Inline CSS --------- Style = ""
+    - Bootstrap : Frontend CSS Framework ..
+        - bootstrap builin classes provide krta ha jis ko use kr k hm website bnaty hein ...
+    - There are two ways to install bootstrap :
+        - Online Way
+        - Offline
+    - Note: We will include two files of bootstap in our project ..
+        - one file will be css
+        - one file will be js
