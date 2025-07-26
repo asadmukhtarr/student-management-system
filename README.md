@@ -56,3 +56,8 @@
     - Note: We will include two files of bootstap in our project ..
         - one file will be css
         - one file will be js
+
+# Bootstrap Guidlines
+
+    - In Bootstrap : Her wo class jis ki apko designing k wkt zarort hei wo apko bootstrap mai mily gi..
+    - sm : small , md : medium , lg: large
