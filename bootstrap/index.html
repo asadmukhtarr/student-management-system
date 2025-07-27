@@ -14,6 +14,10 @@
         box-shadow: 0 4px 12px rgba(0, 21, 255, 0.5);
         /* Red shadow */
     }
+    .hover-shadow:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
+    transition: 0.3s;
+  }
 </style>
 <body>
     <header>
@@ -39,7 +43,7 @@
                             <a href="#" class="nav-link"> <i class="fa fa-handshake-o"></i> Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="btn btn-sm btn-danger mt-2 position-relative">
+                            <a href="#" class="btn btn-sm btn-outline-danger mt-2 position-relative">
                                 <i class="fa fa-shopping-cart"></i> Cart
                                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">
                                     3
@@ -57,6 +61,166 @@
         <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, reprehenderit repellat quas veniam nihil voluptatum ipsum a labore modi saepe vero rerum maiores magni, doloribus deserunt, ad reiciendis ipsam ut? Non nam tenetur fuga corrupti maiores, asperiores, doloremque vel excepturi rem dolorem velit at ad, earum quod quo soluta quis fugiat reprehenderit beatae dolorum et voluptates? Et veritatis quam sit obcaecati, error placeat enim explicabo excepturi amet id laborum iste, voluptate accusantium veniam! Quos tempore illo reiciendis earum dolorum nulla. Vero velit vitae quas alias, praesentium eius consequuntur eligendi reiciendis iure adipisci, necessitatibus, assumenda doloribus numquam sint quam pariatur cupiditate?
         </p>
+        <div class="input-group" style="max-width: 400px;">
+            <input type="text" class="form-control" placeholder="Search Here What You Want">
+            <button class="btn btn-outline-danger" type="button">
+                <i class="fa fa-search"></i> Search
+            </button>
+        </div>
     </div>
+    <section>
+        <div class="p-5">
+            <h2>  <span class="text-info"> <i class="fa fa-star"></i> Our Feature</span> Products</h2>
+            <hr />
+        <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+        
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="row mt-2">
+                        <!-- Product 1 -->
+                        <div class="col-lg-3">
+                            <div class="card shadow-md hover-shadow">
+                                <img src="https://picsum.photos/200?random=1" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <label><b>Iphone 13 Pro Max</b></label>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <label><i class="fa fa-money"></i> 1000$</label>
+                                    <button class="btn btn-sm btn-danger float-end"><i class="fa fa-shopping-cart"></i> Add to
+                                        cart</button>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Product 2 -->
+                        <div class="col-lg-3">
+                            <div class="card shadow-md hover-shadow">
+                                <img src="https://picsum.photos/200?random=2" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <label><b>Iphone 13 Pro Max</b></label>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <label><i class="fa fa-money"></i> 1000$</label>
+                                    <button class="btn btn-sm btn-danger float-end"><i class="fa fa-shopping-cart"></i> Add to
+                                        cart</button>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Product 3 -->
+                        <div class="col-lg-3">
+                            <div class="card shadow-md hover-shadow">
+                                <img src="https://picsum.photos/200?random=3" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <label><b>Iphone 13 Pro Max</b></label>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <label><i class="fa fa-money"></i> 1000$</label>
+                                    <button class="btn btn-sm btn-danger float-end"><i class="fa fa-shopping-cart"></i> Add to
+                                        cart</button>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Product 4 -->
+                        <div class="col-lg-3">
+                            <div class="card shadow-md hover-shadow">
+                                <img src="https://picsum.photos/200?random=4" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <label><b>Iphone 13 Pro Max</b></label>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <label><i class="fa fa-money"></i> 1000$</label>
+                                    <button class="btn btn-sm btn-danger float-end"><i class="fa fa-shopping-cart"></i> Add to
+                                        cart</button>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+        
+                <!-- Slide 2 (duplicate or more products) -->
+                <div class="carousel-item">
+                    <div class="row mt-2">
+                        <div class="col-lg-3">
+                            <div class="card shadow-md hover-shadow">
+                                <img src="https://picsum.photos/200?random=5" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <label><b>Iphone 14 Pro</b></label>
+                                    <p>Another product description here...</p>
+                                </div>
+                                <div class="card-footer">
+                                    <label><i class="fa fa-money"></i> 1200$</label>
+                                    <button class="btn btn-sm btn-danger float-end"><i class="fa fa-shopping-cart"></i> Add to
+                                        cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card shadow-md hover-shadow">
+                                <img src="https://picsum.photos/200?random=5" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <label><b>Iphone 14 Pro</b></label>
+                                    <p>Another product description here...</p>
+                                </div>
+                                <div class="card-footer">
+                                    <label><i class="fa fa-money"></i> 1200$</label>
+                                    <button class="btn btn-sm btn-danger float-end"><i class="fa fa-shopping-cart"></i> Add to
+                                        cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card shadow-md hover-shadow">
+                                <img src="https://picsum.photos/200?random=5" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <label><b>Iphone 14 Pro</b></label>
+                                    <p>Another product description here...</p>
+                                </div>
+                                <div class="card-footer">
+                                    <label><i class="fa fa-money"></i> 1200$</label>
+                                    <button class="btn btn-sm btn-danger float-end"><i class="fa fa-shopping-cart"></i> Add to
+                                        cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card shadow-md hover-shadow">
+                                <img src="https://picsum.photos/200?random=5" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <label><b>Iphone 14 Pro</b></label>
+                                    <p>Another product description here...</p>
+                                </div>
+                                <div class="card-footer">
+                                    <label><i class="fa fa-money"></i> 1200$</label>
+                                    <button class="btn btn-sm btn-danger float-end"><i class="fa fa-shopping-cart"></i> Add to
+                                        cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add up to 4 items again -->
+                    </div>
+                </div>
+        
+            </div>
+        
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        </div>
+    </section>
 </body>
 </html>
