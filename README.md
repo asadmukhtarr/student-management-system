@@ -56,7 +56,9 @@
     - Note: We will include two files of bootstap in our project ..
         - one file will be css
         - one file will be js
-
+# Basic PHP Practicle Project
+    - Pages
+        - Login.php , Register.php , home.php
 # Bootstrap Guidlines
 
     - In Bootstrap : Her wo class jis ki apko designing k wkt zarort hei wo apko bootstrap mai mily gi..
