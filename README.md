@@ -59,7 +59,14 @@
 # Basic PHP Practicle Project
     - Pages
         - Login.php , Register.php , home.php
+    - inlucde php function is used for include an external file ..
 # Bootstrap Guidlines
 
     - In Bootstrap : Her wo class jis ki apko designing k wkt zarort hei wo apko bootstrap mai mily gi..
     - sm : small , md : medium , lg: large
+
+# Interview Questions
+    - Can we create nested form in html? : No
+    - How much methods exists in code? : Three Methods ( GET , POST , DELETE).
+    - How we can create variable in php? : With $ 
+    - Which operator is used for cancatinate the variables In Php? : . is used for cancatinate operator 
