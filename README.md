@@ -70,3 +70,5 @@
     - How much methods exists in code? : Three Methods ( GET , POST , DELETE).
     - How we can create variable in php? : With $ 
     - Which operator is used for cancatinate the variables In Php? : . is used for cancatinate operator 
+    - What is difference between ==, === , = ( = is used for assign a value , == for camparison of values , === is used for compare value + type )
+    - Header function is used for redirect the proccess ...
