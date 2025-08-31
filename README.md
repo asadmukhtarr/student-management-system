@@ -41,6 +41,7 @@
         - First page of website: index.html ( Developer Language ) | Landing page  , Home Page => Index.html
         - Keep in mind always close tag as per requirements ..
     - Assignment # 1: create a Simple html page
+    - Assignment # 2: Research that how can we check that if email already exist in database in php while   register ..
 
 # CSS Types :
 
