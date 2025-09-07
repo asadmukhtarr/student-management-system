@@ -1,6 +1,6 @@
 <?php 
     include('includes/header.php'); // header .. 
-    session_start();  
+    session_start();  // for session ..
     if(empty($_SESSION['name'])) {
         // login redirect ..
         header('location:index.php');
