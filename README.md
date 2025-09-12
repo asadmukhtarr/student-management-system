@@ -75,3 +75,4 @@
     - Header function is used for redirect the proccess ...
     - Why we use mysqli_error() : this command is used for get the error details ..
     - What is session in php? Session is global variable and we use it for secure our pages ..
+    - Difference between unset session and session destroy?
