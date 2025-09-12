@@ -1,3 +1,6 @@
+<?php 
+    session_start();  // for session ..
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +35,7 @@
         <!-- Links -->
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
-            
+            <?php if(!empty($_SESSION['name'])){ ?>
             <!-- Home -->
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="home.php">
@@ -46,10 +49,22 @@
                 <i class="fa fa-user"></i> Account
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="actions/logout.php"><i class="fa fa-user-plus"></i> Logout</a></li>
+                </ul>
+            </li>
+            <?php } else {
+            ?>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-user"></i> Account
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="index.php"><i class="fa fa-sign-in"></i> Login</a></li>
                 <li><a class="dropdown-item" href="register.php"><i class="fa fa-user-plus"></i> Register</a></li>
                 </ul>
             </li>
+            <?php
+            } ?>
 
             </ul>
         </div>

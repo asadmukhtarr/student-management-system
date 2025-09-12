@@ -1,15 +1,48 @@
 <?php 
     include('includes/header.php'); // header .. 
-    session_start();  // for session ..
     if(empty($_SESSION['name'])) {
         // login redirect ..
         header('location:index.php');
     }  
+    include('actions/cn.php'); // connection file ...
+    $query  = "SELECT * FROM `users` ORDER BY id DESC";
+    $result = mysqli_query($cn,$query) or die('cant run query');
 ?>
-<div class="container">
-    <h1>Hello <?php echo $_SESSION['name']; ?> ! Welcome to login system ..</h1>
-    <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, recusandae eaque deleniti laboriosam minima pariatur fuga eius earum, labore iure fugiat debitis, beatae cumque est tenetur nemo nisi sunt repudiandae quos omnis numquam magni dolor quia sequi? Perferendis deleniti aperiam quod odit perspiciatis vero harum voluptate quibusdam. Maxime eos consectetur repellat sed sapiente, fugiat totam recusandae facere animi quod voluptate consequatur dolores enim veritatis iste perferendis ratione vel ea a delectus minima magnam cupiditate facilis amet! Sint, facere? Consequuntur nostrum expedita ad deserunt quos? Possimus earum eligendi pariatur animi, consequatur unde at non quo, eum voluptatem ducimus numquam voluptas provident modi nemo. Porro dolorum ratione rem hic voluptatem saepe ex, autem assumenda culpa architecto reiciendis libero cupiditate ullam mollitia illo pariatur est nihil suscipit quis vel repudiandae sequi! Molestias, natus. Commodi, amet nobis suscipit ratione eius deserunt nisi nostrum molestias delectus incidunt itaque, consequuntur architecto quasi quis magni odit eos accusantium recusandae maxime molestiae, fuga distinctio. Maiores consectetur corrupti vero, ab impedit dignissimos distinctio minus aliquam perferendis nihil quo aut doloremque consequatur? Nisi dolore, ipsa repellendus ratione modi nam vel quas labore temporibus commodi. Necessitatibus nulla minima explicabo sit. Autem placeat ab temporibus nesciunt provident cupiditate vitae facilis nihil inventore.
-    </p>
-</div>
+    <div class="bg-primary text-white p-5">
+        <div class="container">
+            <h1> <i class="fa fa-smile-o"></i> Hello <?php echo $_SESSION['name']; ?> ! Welcome to login system ..</h1>
+            <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae magni doloremque libero pariatur saepe ullam ipsum amet non quos ducimus nam eaque, ex facere molestias iure dolores voluptatibus nulla repellendus rem nostrum distinctio. Exercitationem, molestias obcaecati ipsum sapiente animi odit quos atque, ullam consequuntur voluptatibus doloribus quod a est in.
+            </p>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="card rounded-0 mt-2">
+            <div class="card-header">
+                <i class="fa fa-users"></i> All Users
+            </div>
+            <table class="table table-bordered table-stripped table-hover">
+                <tr>
+                    <th><i class="fa fa-hashtag"></i></th>
+                    <th><i class="fa fa-user"></i> Name</th>
+                    <th><i class="fa fa-envelope"></i> Email</th>
+                    <th><i class="fa fa-whatsapp"></i> WhatsApp</th>
+                    <th><i class="fa fa-cogs"></i> Action</th>
+                </tr>
+                <?php while($row = mysqli_fetch_array($result)){ ?>
+                <tr>
+                    <td><?php echo $row['id']; ?></td>
+                    <td><?php echo $row['name']; ?></td>
+                    <td><?php echo $row['email']; ?></td>
+                    <td><?php echo $row['whatsapp']; ?></td>
+                    <td>
+                        <a href="#" title="Edit" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
+                        &nbsp;
+                        <a href="#" title="Delete" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+                <?php } ?>
+            </table>
+        </div>
+    </div>
 <?php include('includes/footer.php'); // footer .. ?>
