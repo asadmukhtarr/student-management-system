@@ -65,7 +65,10 @@
 
     - In Bootstrap : Her wo class jis ki apko designing k wkt zarort hei wo apko bootstrap mai mily gi..
     - sm : small , md : medium , lg: large
-
+# Laravel Guidlines ..
+    - For Install Laravel:
+        - Xampp download and install
+        - Download and install composer
 # Interview Questions
     - Can we create nested form in html? : No
     - How much methods exists in code? : Three Methods ( GET , POST , DELETE).
@@ -76,3 +79,7 @@
     - Why we use mysqli_error() : this command is used for get the error details ..
     - What is session in php? Session is global variable and we use it for secure our pages ..
     - Difference between unset session and session destroy?
+# Laravel Interview Questions
+    - What is difference between Framework and libraries?
+        - Librarires : Base on small solutions : speicific Task
+        - Frameworks : Base on large solution : complete solution
