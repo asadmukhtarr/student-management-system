@@ -69,6 +69,36 @@
     - For Install Laravel:
         - Xampp download and install
         - Download and install composer
+        - Way for install laravel:
+            - Through Composer
+            - Direct Installation ( Recommended )
+                - composer global require laravel/installer ( Only Once )
+                - Laravel New Project ( In Htdocs )
+            - For Run Laravel Project: php artisan serve
+    - File Struture Of Laravel :
+        - Views : Resource/views
+        - Controllers :  App\Http\Controllers
+        - Models : App\Models\
+        - Routes:  Links
+        - ENV : Envoirment File
+    - Defualt Settings In Laravel :
+        - Default Model : User
+        - Defualt Migration : User
+# Planing of project ( Ecommerce )
+    - Client side
+        - Before Login
+            - Login System 
+            - Required pages
+        - After Login
+            - Dashboard ( where we can check history and status or our orders).
+    - Admin Side 
+        - Login System
+        - Dashboard
+        - Products ( Create , Products Show, Categories )
+        - Order Section ( New Orders , Order History )
+        - Analytics
+        - Settings (Change Password)
+        - Logout
 # Interview Questions
     - Can we create nested form in html? : No
     - How much methods exists in code? : Three Methods ( GET , POST , DELETE).
