@@ -102,7 +102,7 @@
         - Analytics
         - Settings (Change Password)
         - Logout
-# Interview Questions
+# PHP Interview Questions 
     - Can we create nested form in html? : No
     - How much methods exists in code? : Three Methods ( GET , POST , DELETE).
     - How we can create variable in php? : With $ 
