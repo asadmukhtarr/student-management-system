@@ -84,11 +84,14 @@
     - Defualt Settings In Laravel :
         - Default Model : User
         - Defualt Migration : User
+    - Storage Folder: This folder is used to store files which we are getting from website users ..
+    - Use Of Routes Folder: In Routes Folder : Routes Links: Web.php ( Use For Web Related Routes) , api.php ( For API Routes) , Console.php ( For Console Routes) , Chanels.php (Channsls Create) ..
+    - Vendor Folder Is used for  handling the laravel project ...
 # Planing of project ( Ecommerce )
     - Client side
         - Before Login
             - Login System 
-            - Required pages
+            - Required pages ( Home (welcome.blade.php) , About , Contact , Products , Login , Register , Cart , Checkout )
         - After Login
             - Dashboard ( where we can check history and status or our orders).
     - Admin Side 
@@ -113,3 +116,7 @@
     - What is difference between Framework and libraries?
         - Librarires : Base on small solutions : speicific Task
         - Frameworks : Base on large solution : complete solution
+    - Command for create new route In Laravel : php artisan make:controller nameController ..
+    - How to create seprate header and footer in php ..
+# External Links :
+    - https://github.com/ColorlibHQ/AdminLTE (Admin Template AdminLTE)
