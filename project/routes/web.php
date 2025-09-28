@@ -15,3 +15,7 @@ Route::get('/contact',[pagesController::class,'contact'])->name('contact');
 Route::get('/checkout',[pagesController::class,'checkout'])->name('checkout');
 // For Cart ..
 Route::get(uri: '/cart',action: [pagesController::class,'cart'])->name('cart');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

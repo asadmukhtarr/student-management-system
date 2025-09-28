@@ -120,3 +120,10 @@
     - How to create seprate header and footer in php ..
 # External Links :
     - https://github.com/ColorlibHQ/AdminLTE (Admin Template AdminLTE)
+# Vue Auth In Laravel :
+    - Step # 1: Install Laravel Project And download + install nodejs in your system
+    - Step # 2: Connect Data through env file and run php artisan migrate 
+    - Step # 3: composer require laravel/ui 
+    - Step # 4: php artisan ui vue --auth
+    - Step # 5: npm install ( this command is required to install nodejs in system)
+    - Step # 6: npm run dev
