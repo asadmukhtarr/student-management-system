@@ -1,0 +1,179 @@
+ .saif {
+     box-shadow: 0 4px 12px rgba(0, 21, 255, 0.5);
+     /* Red shadow */
+ }
+
+ .hover-shadow:hover {
+     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+     transition: 0.3s;
+ }
+
+ .category-card {
+     background-color: #fff;
+     overflow: hidden;
+     border: 1px solid rgba(0, 0, 0, 0.1);
+     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+     transition: all 0.3s ease-in-out;
+     cursor: pointer;
+ }
+
+ .category-card:hover {
+     transform: translateY(-1px) scale(1.03);
+     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+ }
+
+ .category-card img {
+     transition: transform 0.3s;
+ }
+
+ .category-card:hover img {
+     transform: scale(1.1);
+ }
+
+ .form-control:focus {
+     box-shadow: none;
+     border-color: #ff4d4d;
+ }
+
+ button.btn-danger:hover {
+     background-color: #e60000;
+ }
+ .team-card img {
+     object-fit: cover;
+     height: 250px;
+ }
+
+ .about-hero {
+     background-color: #d1ecf1;
+     padding: 80px 0;
+ }
+
+ .cta-section {
+     background-color: #0dcaf0;
+     color: white;
+     padding: 60px 0;
+ }
+ .product-card img {
+     height: 200px;
+     object-fit: cover;
+ }
+
+ .product-card {
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ .product-card:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 0 20px rgba(0, 123, 255, 0.15);
+ }
+  .contact-card {
+      border-left: 4px solid #0dcaf0;
+  }
+
+  .contact-icon {
+      width: 40px;
+      height: 40px;
+      background-color: #0dcaf0;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+  }
+
+  .contact-section {
+      background-color: #f8f9fa;
+  }
+  .map {
+    margin-bottom: -5px;
+  }
+  .map iframe {
+      width: 100%;
+      border: 0;
+      height: 300px;
+  }
+  body {
+      height: 100vh;
+      background-color: #f1f9fb;
+  }
+
+  .login-container {
+      height: 100vh;
+  }
+
+  .login-card {
+      max-width: 400px;
+      width: 100%;
+      border-top: 4px solid #0dcaf0;
+  }
+
+  .form-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #0dcaf0;
+  }
+
+  .form-control {
+      padding-left: 35px;
+  }
+  .register-container {
+      height: 100vh;
+  }
+
+  .register-card {
+      max-width: 500px;
+      width: 100%;
+      border-top: 4px solid #0dcaf0;
+  }
+
+  .form-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #0dcaf0;
+  }
+
+  .form-control {
+      padding-left: 35px;
+  }
+   .cart-header {
+       background-color: #0dcaf0;
+       color: white;
+   }
+
+   .product-img {
+       width: 60px;
+       height: 60px;
+       object-fit: cover;
+   }
+
+   .quantity-input {
+       width: 60px;
+   }
+
+   .table td,
+   .table th {
+       vertical-align: middle;
+   }
+
+   .cart-summary {
+       background-color: #f8f9fa;
+   }
+    .form-icon {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        color: #0dcaf0;
+    }
+
+    .form-control {
+        padding-left: 35px;
+    }
+
+    .checkout-summary {
+        background-color: #f8f9fa;
+    }

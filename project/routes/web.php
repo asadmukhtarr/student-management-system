@@ -18,4 +18,4 @@ Route::get(uri: '/cart',action: [pagesController::class,'cart'])->name('cart');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
