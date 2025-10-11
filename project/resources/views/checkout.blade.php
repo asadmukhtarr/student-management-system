@@ -97,7 +97,7 @@
                                 <span>PKR 270,000</span>
                             </li>
                         </ul>
-                        <a href="cart.html" class="btn btn-outline-info w-100"><i class="fa fa-arrow-left"></i> Back to Cart</a>
+                        <a href="{{ route('cart') }}" class="btn btn-outline-info w-100"><i class="fa fa-arrow-left"></i> Back to Cart</a>
                     </div>
                 </div>
             </div>

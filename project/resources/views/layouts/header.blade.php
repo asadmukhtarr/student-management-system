@@ -34,14 +34,29 @@
                         </li>
                         <li class="nav-item m-1">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-dm btn-danger"> <i class="fa fa-user-circle"></i> Account</button>
+                                <button type="button" class="btn btn-dm btn-danger"> @if(Auth::check()) <i class="fa fa-user-circle"></i> {{ Auth::user()->name }} @else <i class="fa fa-user-circle"></i> Account @endif</button>
                                 <button type="button" class="btn btn-danger btn-md dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
                                     aria-expanded="false">
                                     <span class="visually-hidden">Toggle Dropdown</span>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('register') }}">Register</a></li>
+                                    @if(Auth::check())
+                                    <li><a class="dropdown-item" href="{{ route('client.dashboard') }}">Dashboard</a></li>
+                                    <li>
+                                          <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                            document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                @csrf
+                                            </form>
+                                    </li>
+
+                                    @else 
+                                     <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
+                                     <li><a class="dropdown-item" href="{{ route('register') }}">Register</a></li>
+                                    @endif
                                 </ul>
                             </div>
                         </li>

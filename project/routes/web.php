@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pagesController;
+use App\Http\Controllers\Admin\adminController;
 
+// Cient Side Routes ...
 // For Home .. Landing Page ..
 Route::get('/', [pagesController::class,'home'])->name('home');
 // For Products ..
@@ -18,4 +20,27 @@ Route::get(uri: '/cart',action: [pagesController::class,'cart'])->name('cart');
 
 Auth::routes();
 
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('client.dashboard');
+// Admin Side Routes ...
+// Dashboard & Common Pages
+Route::prefix('admin')->name('admin.')->group(function(){
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('/login', [AdminController::class, 'login'])->name('login');
+    Route::get('/settings', [AdminController::class, 'settings'])->name('settings');
+    Route::get('/analytics', [AdminController::class, 'analytics'])->name('analytics');
+
+    // Orders Group
+    Route::prefix('orders')->name('orders.')->group(function () {
+        Route::get('/new', [AdminController::class, 'newOrders'])->name('new');
+        Route::get('/history', [AdminController::class, 'orderHistory'])->name('history');
+    });
+
+    // Products Group
+    Route::prefix('products')->name('products.')->group(function () {
+        //Route::get('/', [AdminController::class, 'productList'])->name('list');
+        Route::get('/create', [AdminController::class, 'createProduct'])->name('create');
+        Route::get('/category', [AdminController::class, 'category'])->name('category');
+        Route::get('/product', [AdminController::class, 'productDetails'])->name('productdetails');
+    });
+
+});
