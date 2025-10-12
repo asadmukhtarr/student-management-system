@@ -37,7 +37,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
     // Products Group
     Route::prefix('products')->name('products.')->group(function () {
-        //Route::get('/', [AdminController::class, 'productList'])->name('list');
+        Route::get('/', [AdminController::class, 'productList'])->name('list');
         Route::get('/create', [AdminController::class, 'createProduct'])->name('create');
         Route::get('/category', [AdminController::class, 'category'])->name('category');
         Route::get('/product', [AdminController::class, 'productDetails'])->name('productdetails');
