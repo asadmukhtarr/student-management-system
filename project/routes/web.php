@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pagesController;
 use App\Http\Controllers\Admin\adminController;
+use App\Http\Controllers\Admin\categoryController;
 
 // Cient Side Routes ...
 // For Home .. Landing Page ..
@@ -39,7 +40,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::prefix('products')->name('products.')->group(function () {
         Route::get('/', [AdminController::class, 'productList'])->name('list');
         Route::get('/create', [AdminController::class, 'createProduct'])->name('create');
-        Route::get('/category', [AdminController::class, 'category'])->name('category');
+        Route::resource('/category', categoryController::class);
         Route::get('/product', [AdminController::class, 'productDetails'])->name('productdetails');
     });
 

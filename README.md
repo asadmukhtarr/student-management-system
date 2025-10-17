@@ -118,6 +118,9 @@
         - Frameworks : Base on large solution : complete solution
     - Command for create new route In Laravel : php artisan make:controller nameController ..
     - How to create seprate header and footer in php ..
+    - What is use of Models and migrations and why we make them sigular and ploral ..
+    - What is resource controller?
+    - Why we use CSRF token for laravel forms? we use it for the security of form in laravel
 # External Links :
     - https://github.com/ColorlibHQ/AdminLTE (Admin Template AdminLTE)
 # Vue Auth In Laravel :
