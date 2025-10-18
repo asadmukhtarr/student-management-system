@@ -58,6 +58,9 @@ class categoryController extends Controller
     public function edit(string $id)
     {
         //
+        $category = category::find($id);
+        $categories = category::orderby('id','desc')->get();
+        return view('admin.products.category',compact('category','categories'));
     }
 
     /**
@@ -66,6 +69,10 @@ class categoryController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $category = category::find($id);
+        $category->name = $request->name;
+        $category->save();
+        return redirect(route('admin.products.category.index'))->with('success','Category Updated Succesfully');
     }
 
     /**
@@ -74,5 +81,8 @@ class categoryController extends Controller
     public function destroy(string $id)
     {
         //
+        $category = category::find($id);
+        $category->delete();
+        return redirect()->back()->with('warning','Category Deleted Succesfully');
     }
 }
