@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\category;
+use App\Models\product;
 
 class productController extends Controller
 {
@@ -33,6 +34,18 @@ class productController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+            'description' => 'required',
+            'category_id' => 'required',
+            'image' => 'required'
+        ]);
+        if($request->hasFile('image')){
+            $name = time().".".$request->image->getClientOriginalExtension();
+            $request->image->storeAs('products',$name,'public');
+        }
+        return $request;
     }
 
     /**
