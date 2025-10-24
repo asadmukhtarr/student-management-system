@@ -7,4 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class product extends Model
 {
     //
+    // inverse relationship ..
+    public function category(){
+        return $this->belongsTo(category::class);
+    }
 }

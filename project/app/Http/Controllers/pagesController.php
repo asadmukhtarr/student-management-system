@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\product;
 
 class pagesController extends Controller
 {
@@ -12,7 +13,12 @@ class pagesController extends Controller
     }
     // products .. 
     public function products(){
-        return view('products');
+        $products = product::orderby('id','desc')->get();
+        return view('products',compact('products'));
+    }
+    public function show($id){
+        $product = product::find($id);
+        return view('product',compact('product'));
     }
     //  about ..
     public function about(){

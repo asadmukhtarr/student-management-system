@@ -10,4 +10,7 @@ class category extends Model
     protected $fillable = [
         'name', // add only actual table columns here
     ];
+    public function products(){
+        return $this->hasMany(product::class);
+    }
 }

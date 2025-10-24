@@ -79,7 +79,7 @@
                 <tbody>
                     @foreach($categories as $category)
                     <tr>
-                        <td>{{ $category->name }}</td>
+                        <td>{{ $category->name }} <span class="badge bg-danger float-end">{{ $category->products->count() }}</span></td>
                         <td>{{ $category->created_at->diffforhumans() }}</td>
                         <td>
                             <a href="{{ route('admin.products.category.edit',$category->id) }}">

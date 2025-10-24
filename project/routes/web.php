@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\productController;
 Route::get('/', [pagesController::class,'home'])->name('home');
 // For Products ..
 Route::get('/products',[pagesController::class,'products'])->name('products');
+Route::get('/product/{id}',[pagesController::class,'show'])->name('product.client.show');
 // For About ..
 Route::get('/about',[pagesController::class,'about'])->name('about');
 // For Contact ..

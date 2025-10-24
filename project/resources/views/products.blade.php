@@ -30,170 +30,20 @@
     <section class="py-5">
         <div class="container">
             <div class="row g-4 mt-2">
+                @foreach($products as $product)
+                <!-- Product Card -->
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card product-card border-info shadow-sm">
+                        <img src="{{ asset('storage/products/' . $product->image) }}" class="card-img-top" alt="Product">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ $product->name }}</h5>
+                            <p class="text-muted">PKR {{ $product->price }}</p>
+                            <a href="{{ route('product.client.show',$product->id) }}" class="btn btn-info btn-sm">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
     
-                <!-- Product Card -->
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card product-card border-info shadow-sm">
-                        <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Product">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">iPhone 13 Pro Max</h5>
-                            <p class="text-muted">PKR 245,000</p>
-                            <a href="#" class="btn btn-info btn-sm">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Product Card -->
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card product-card border-info shadow-sm">
-                        <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=600&q=80" class="card-img-top"
-                            alt="Product">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Dell XPS 13</h5>
-                            <p class="text-muted">PKR 175,000</p>
-                            <a href="#" class="btn btn-info btn-sm">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Product Card -->
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card product-card border-info shadow-sm">
-                        <img src="https://source.unsplash.com/300x200/?watch,smartwatch" class="card-img-top" alt="Product">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Apple Watch Series 9</h5>
-                            <p class="text-muted">PKR 75,000</p>
-                            <a href="#" class="btn btn-info btn-sm">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Product Card -->
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card product-card border-info shadow-sm">
-                        <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Product">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Sony WH-1000XM4</h5>
-                            <p class="text-muted">PKR 48,000</p>
-                            <a href="#" class="btn btn-info btn-sm">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- You can duplicate cards above for more products -->
-    
-            </div>
-            <div class="row g-4 mt-2">
-            
-                <!-- Product Card -->
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card product-card border-info shadow-sm">
-                        <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=600&q=80"
-                            class="card-img-top" alt="Product">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">iPhone 13 Pro Max</h5>
-                            <p class="text-muted">PKR 245,000</p>
-                            <a href="#" class="btn btn-info btn-sm">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- Product Card -->
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card product-card border-info shadow-sm">
-                        <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=600&q=80"
-                            class="card-img-top" alt="Product">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Dell XPS 13</h5>
-                            <p class="text-muted">PKR 175,000</p>
-                            <a href="#" class="btn btn-info btn-sm">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- Product Card -->
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card product-card border-info shadow-sm">
-                        <img src="https://source.unsplash.com/300x200/?watch,smartwatch" class="card-img-top" alt="Product">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Apple Watch Series 9</h5>
-                            <p class="text-muted">PKR 75,000</p>
-                            <a href="#" class="btn btn-info btn-sm">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- Product Card -->
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card product-card border-info shadow-sm">
-                        <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=600&q=80"
-                            class="card-img-top" alt="Product">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Sony WH-1000XM4</h5>
-                            <p class="text-muted">PKR 48,000</p>
-                            <a href="#" class="btn btn-info btn-sm">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- You can duplicate cards above for more products -->
-            
-            </div>
-            <div class="row g-4 mt-2">
-            
-                <!-- Product Card -->
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card product-card border-info shadow-sm">
-                        <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=600&q=80"
-                            class="card-img-top" alt="Product">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">iPhone 13 Pro Max</h5>
-                            <p class="text-muted">PKR 245,000</p>
-                            <a href="#" class="btn btn-info btn-sm">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- Product Card -->
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card product-card border-info shadow-sm">
-                        <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=600&q=80"
-                            class="card-img-top" alt="Product">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Dell XPS 13</h5>
-                            <p class="text-muted">PKR 175,000</p>
-                            <a href="#" class="btn btn-info btn-sm">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- Product Card -->
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card product-card border-info shadow-sm">
-                        <img src="https://source.unsplash.com/300x200/?watch,smartwatch" class="card-img-top" alt="Product">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Apple Watch Series 9</h5>
-                            <p class="text-muted">PKR 75,000</p>
-                            <a href="#" class="btn btn-info btn-sm">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- Product Card -->
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card product-card border-info shadow-sm">
-                        <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=600&q=80"
-                            class="card-img-top" alt="Product">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Sony WH-1000XM4</h5>
-                            <p class="text-muted">PKR 48,000</p>
-                            <a href="#" class="btn btn-info btn-sm">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- You can duplicate cards above for more products -->
-            
             </div>
         </div>
     </section>
