@@ -41,25 +41,5 @@ class AdminController extends Controller
     {
         return view('admin.orders.history');
     }
-
-    // Products
-    public function productList()
-    {
-        return view('admin.products.products');
-    }
-
-    public function createProduct()
-    {
-        return view('admin.products.create');
-    }
-
-    public function category()
-    {
-        return view('admin.products.category');
-    }
-
-    public function productDetails()
-    {
-        return view('admin.products.product');
-    }
+    // for users ..
 }

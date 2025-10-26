@@ -177,6 +177,12 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
+                         <li class="nav-item">
+                            <a href="{{ route('admin.users.index') }}" class="nav-link">
+                                <i class="nav-icon bi bi-key-fill"></i>
+                                <p>Users</p>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="{{ route('admin.settings') }}" class="nav-link">
                                 <i class="nav-icon bi bi-key-fill"></i>
@@ -188,7 +194,7 @@
 
                 <!-- Logout -->
                 <li class="nav-item mt-3">
-                    <a href="{{ route('admin.login') }}" class="nav-link text-danger fw-semibold">
+                    <a href="{{ route('admin.logout') }}" class="nav-link text-danger fw-semibold">
                         <i class="nav-icon bi bi-box-arrow-right"></i>
                         <p>Logout</p>
                     </a>

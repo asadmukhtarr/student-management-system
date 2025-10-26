@@ -5,6 +5,7 @@ use App\Http\Controllers\pagesController;
 use App\Http\Controllers\Admin\adminController;
 use App\Http\Controllers\Admin\categoryController;
 use App\Http\Controllers\Admin\productController;
+use App\Http\Controllers\admin\usersController;
 
 // Cient Side Routes ...
 // For Home .. Landing Page ..
@@ -26,7 +27,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('client.dashboard');
 // Admin Side Routes ...
 // Dashboard & Common Pages
-Route::prefix('admin')->name('admin.')->group(function(){
+Route::prefix('admin')->middleware('admin')->name('admin.')->group(function(){
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::get('/login', [AdminController::class, 'login'])->name('login');
     Route::get('/settings', [AdminController::class, 'settings'])->name('settings');
@@ -37,7 +38,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::get('/new', [AdminController::class, 'newOrders'])->name('new');
         Route::get('/history', [AdminController::class, 'orderHistory'])->name('history');
     });
-
+    Route::resource('users',usersController::class);
     Route::resource('/product',productController::class);
     // Products Group
     Route::prefix('products')->name('products.')->group(function () {
@@ -45,3 +46,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
     });
 
 });
+Route::get('/logout/admin',function(){
+    Auth::logout();
+    return redirect(route('home'));
+})->name('admin.logout');
