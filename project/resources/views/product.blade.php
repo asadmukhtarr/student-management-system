@@ -35,7 +35,9 @@
 
                             <!-- Add to Cart Button -->
                             <div class="mt-3">
-                                <button class="btn btn-lg btn-primary w-100">Add to Cart</button>
+                                <a href="{{ route('add.cart',$product->id) }}">
+                                    <button class="btn btn-lg btn-primary w-100">Add to Cart</button>
+                                </a>
                             </div>
 
                             <!-- Additional Details -->

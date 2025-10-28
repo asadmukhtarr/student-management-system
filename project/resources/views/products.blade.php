@@ -38,7 +38,7 @@
                         <div class="card-body text-center">
                             <h5 class="card-title">{{ $product->name }}</h5>
                             <p class="text-muted">PKR {{ $product->price }}</p>
-                            <a href="{{ route('product.client.show',$product->id) }}" class="btn btn-info btn-sm">Add to Cart</a>
+                            <a href="{{ route('product.client.show',$product->id) }}" class="btn btn-info btn-sm">Check Details</a>
                         </div>
                     </div>
                 </div>

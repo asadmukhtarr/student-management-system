@@ -20,9 +20,15 @@ Route::get('/contact',[pagesController::class,'contact'])->name('contact');
 // For Checkout ..
 Route::get('/checkout',[pagesController::class,'checkout'])->name('checkout');
 // For Cart ..
-Route::get(uri: '/cart',action: [pagesController::class,'cart'])->name('cart');
 
 Auth::routes();
+Route::middleware('auth')->group(function(){
+    Route::get('/cart', [pagesController::class, 'cart'])->name('cart');
+    Route::post('/checkout/place', [pagesController::class, 'place_order'])->name('checkout.place');
+    Route::get('/cart/add/{id}', [pagesController::class, 'add_to_cart'])->name('add.cart');
+    Route::post('/cart/update/{id}', [pagesController::class, 'update_cart'])->name('cart.update');
+    Route::delete('/cart/remove/{id}', [pagesController::class, 'remove_cart'])->name('cart.remove');
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('client.dashboard');
 // Admin Side Routes ...
@@ -37,6 +43,10 @@ Route::prefix('admin')->middleware('admin')->name('admin.')->group(function(){
     Route::prefix('orders')->name('orders.')->group(function () {
         Route::get('/new', [AdminController::class, 'newOrders'])->name('new');
         Route::get('/history', [AdminController::class, 'orderHistory'])->name('history');
+    });
+    Route::prefix('orders')->group(function(){
+        Route::get('/view/{id}', [AdminController::class, 'viewOrder'])->name('orders.view');
+        Route::get('/complete/{id}', [AdminController::class, 'completeOrder'])->name('orders.complete');
     });
     Route::resource('users',usersController::class);
     Route::resource('/product',productController::class);

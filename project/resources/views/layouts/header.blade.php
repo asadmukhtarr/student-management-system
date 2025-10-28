@@ -64,7 +64,7 @@
                             <a href="{{ route('cart') }}" class="btn btn-sm btn-outline-danger mt-2 position-relative">
                                 <i class="fa fa-shopping-cart"></i> Cart
                                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">
-                                    3
+                                    {{ App\Models\cart::where('user_id',Auth::id())->count() }}
                                     <span class="visually-hidden">items in cart</span>
                                 </span>
                             </a>
