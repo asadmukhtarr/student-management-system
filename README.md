@@ -130,3 +130,20 @@
     - Step # 4: php artisan ui vue --auth
     - Step # 5: npm install ( this command is required to install nodejs in system)
     - Step # 6: npm run dev
+# Javscript Development Learning Plan :-
+    - Html And CSS with respect to JS ...
+    - Javascript Basic 
+            - JS fundamentals 
+            - JS ES6 , ES7
+    - ReactJS 
+    - MongoDB ( NO Mysql Database )
+    - NodeJS --> ExpressJS 
+
+# Guidlines related to JS :
+    - Actions In JS (  Normal Sysem Actions ) --- Events ..
+        1 - Click : Jb ak bar click ho ..
+        2 - Doube Click : jb 2 bar click ho ..
+        3 - Drag  : jb mouse sy drag ho ..
+        4 - Mouse Over : jb mouse ko object k uper ly kr ..
+        5 - KeyUp : jb hm type kryn ...
+        6 - KeyDown : jb type krna chor dyn ..
