@@ -147,3 +147,6 @@
         4 - Mouse Over : jb mouse ko object k uper ly kr ..
         5 - KeyUp : jb hm type kryn ...
         6 - KeyDown : jb type krna chor dyn ..
+    - In JS
+        - Documnet => Web Page 
+        - Element => Html tag

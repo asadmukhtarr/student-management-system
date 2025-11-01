@@ -3,6 +3,26 @@
         <title>Asad Mukhtar</title>
     </head>
     <body>
+        <input type="text" id="result" /> <br /> <br />
+        <button type="button" value="1" onclick="calculate(this.value)">1</button>
+        <button type="button" value="2" onclick="calculate(this.value)">2</button>
+        <button type="button" value="3" onclick="calculate(this.value)">3</button>
+        <button type="button" value="4" onclick="calculate(this.value)">4</button>
+        <hr />
+        <button type="button" value="5" onclick="calculate(this.value)">5</button>
+        <button type="button" value="6" onclick="calculate(this.value)">6</button>
+        <button type="button" value="7" onclick="calculate(this.value)">7</button>
+        <button type="button" value="8" onclick="calculate(this.value)">8</button>
+        <hr />
+        <button type="button" value="9" onclick="calculate(this.value)">9</button>
+        <button type="button" value="0" onclick="calculate(this.value)">0</button>
+        <button type="button" value="+" onclick="calculate(this.value)">+</button>
+        <button type="button" value="-" onclick="calculate(this.value)">/</button>
+        <hr />
+        <button type="button" value="*" onclick="calculate(this.value)">*</button>
+        <button type="button" value="-" onclick="calculate(this.value)">-</button>
+        <button type="button" value="c" onclick="calculate(this.value)">c</button>
+        <button type="button" value="=" onclick="calculate(this.value)">=</button>
         <h1>Hello World ..</h1> 
         <h2>Hello World ..</h2>
         <h3>Hello World ..</h3>
@@ -13,13 +33,39 @@
         <button onclick="alert('Hello Gulzar..')">Click Me (One Click)</button>
         <button ondblclick="alert('Helo Asad')">Click Me (One double click)</button>
         <button onmouseover="alert('Helo Aifa, I am working..')">Click Me (On Mouse Over)</button>
+        <button onclick="abc(23)"> Click For Function </button>
         <hr />  
         <input type="text" onkeyup="console.log('Hello World')" />
+        <hr />
+        <h2>Lecture # 2: Javascritp development</h2>
+        <input type="text" id="asad" placeholder="asad ID Input" />
+        <button type="button" onclick="getAsad()">Click</button>
+        <br />
+        <h2>Your Text Is :</h2>
+        <p id="demo" style="color:red;"></p>
+        <hr />
+        <input type="text" id="asad2" onkeyup="getAsad2()">
+        <p id="demo2" style="color:red;"></p>
+        <hr />
         <script>
             console.log("Hello Abubakar, Welcome to mern stack development");
             var x = 2;
             var y = 2;
             console.log(x+y);
+            function abc(c){
+                alert(c);
+            }
+            function getAsad(){
+                var name = document.getElementById("asad").value;
+                document.getElementById("demo").innerHTML = name;
+            }
+            function getAsad2(){
+                var typing = document.getElementById("asad2").value;
+                document.getElementById("demo2").innerHTML = typing;
+            }
+            function calculate(v){
+                document.getElementById("result").value = v;
+            }
         </script>
     </body>
 </html>
