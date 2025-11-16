@@ -150,3 +150,14 @@
     - In JS
         - Documnet => Web Page 
         - Element => Html tag
+# ReactJS :
+    - Installation in reactJS  ..
+        - Requirements : Download NodeJS and Install ..
+        - Installation Command: npx create-react-app project-name ( Any name of project ) ..
+        - Run Project: npm start
+    - Components which are connected with html file ..
+    - public folrder have main file of webiste or web application ..
+    - component related data will be in src folder ..
+# React Interview Questions?
+    - React is librairy or framework? : Librairy ..
+    - What is purpose of nodemodules folder? this is the backbone of project ..
