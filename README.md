@@ -161,3 +161,8 @@
 # React Interview Questions?
     - React is librairy or framework? : Librairy ..
     - What is purpose of nodemodules folder? this is the backbone of project ..
+# Routes In ReactJS 
+    - Step # 1 : npm install react-router-dom
+    - Step # 2 : Add Browser router in index.js
+    - Step # 3 : Routes and route import and bind in App.jsx
+    - Step # 4 : import Link and joing them in navbar ..
