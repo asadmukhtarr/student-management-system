@@ -9,14 +9,14 @@ function App(){
     return (
         <div>
             <Header title={title} />
-            <h2>Main Component | Hello World</h2>
-            <p>Loem Asadjhaskjb asdkjahdshsadkjhakjdsh</p>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/products" element={<Products />} />
-                <Route path="/contact" element={<Contact />} />
-            </Routes>
+            <div className="container-fluid mt-5">
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/products" element={<Products />} />
+                    <Route path="/contact" element={<Contact />} />
+                </Routes>
+            </div>
         </div>
     );
 }
