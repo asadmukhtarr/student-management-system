@@ -4,43 +4,7 @@ const Products = () => {
     const [price,setPrice] = useState("");
     const [qunatity,setQauntity] = useState("");
     const [description,setDescription] = useState("");
-    const products  = [
-        {
-            id:1,
-            title:'Iphone X',
-            quantity:100,
-            price:100000,
-            description:'If you already have PHP and Composer installed, you may install the Laravel installer via Composer'
-        },
-        {
-            id:2,
-            title:'Iphone 12',
-            quantity:100,
-            price:120000,
-            description:'If you already have PHP and Composer installed, you may install the Laravel installer via Composer'
-        },
-        {
-            id:3,
-            title:'Iphone 13',
-            quantity:100,
-            price:200000,
-            description:'If you already have PHP and Composer installed, you may install the Laravel installer via Composer'
-        },
-        {
-            id:4,
-            title:'Iphone 14',
-            quantity:100,
-            price:2500000,
-            description:'If you already have PHP and Composer installed, you may install the Laravel installer via Composer'
-        },
-        {
-            id:5,
-            title:'Iphone 15 Pro Max',
-            quantity:100,
-            price:300000,
-            description:'If you already have PHP and Composer installed, you may install the Laravel installer via Composer'
-        }
-    ];
+    const [products,setProducts] = useState([]);
     const dataHandle = (e) => {
         e.preventDefault()
         let product = {
@@ -51,8 +15,14 @@ const Products = () => {
         }
         console.log(product);
     }
+    const fetchProducts = async () => {
+        const response = await fetch("https://692b046a7615a15ff24e757f.mockapi.io/products");
+        const data = await response.json();
+        setProducts(data);
+    }
     useEffect(function(){
         console.log('Here are products',products);
+        fetchProducts();
     });
     return (
         <div>
@@ -90,6 +60,40 @@ const Products = () => {
                         <div className="card-header">
                             All Products
                         </div>
+                        <table className="table table-bordered table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Title</th>
+                                    <th>Qunatity</th>
+                                    <th>Price</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    products && products.length > 0 ? (
+                                        products.map((product) => (
+                                        <tr key={product.id}>
+                                            <td>{product.id}</td>
+                                            <td>{product.title}</td>
+                                            <td>{product.quantity}</td>
+                                            <td>{product.price} Pkr</td>
+                                            <td>
+                                            <button className="btn btn-sm btn-danger m-2">Delete</button>
+                                            <button className="btn btn-sm btn-success">Edit</button>
+                                            </td>
+                                        </tr>
+                                        ))
+                                    ) : (
+                                        <tr>
+                                            <td className="text-center" colSpan={5}>Can't Find Products</td>
+                                        </tr>
+                                    )
+                                    }
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
