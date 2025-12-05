@@ -1,27 +1,41 @@
 import { useState,useEffect } from "react";
+import { Link } from "react-router-dom";
 const Products = () => {
     const [title,setTitle] = useState("Iphone 16 Pro Max");
     const [price,setPrice] = useState("");
     const [qunatity,setQauntity] = useState("");
-    const [description,setDescription] = useState("");
     const [products,setProducts] = useState([]);
-    const dataHandle = (e) => {
+    const dataHandle = async (e) => {
         e.preventDefault()
         let product = {
             title:title,
             price:price,
-            quantity:qunatity,
-            description:description
+            quantity:qunatity
         }
-        console.log(product);
+        const response = await fetch(`https://692b046a7615a15ff24e757f.mockapi.io/products`,{
+            method:"POST",
+             headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(product)
+        });
+        const data = await response.json();
+        console.log("Product Inserted Succesfully",data);
     }
     const fetchProducts = async () => {
         const response = await fetch("https://692b046a7615a15ff24e757f.mockapi.io/products");
         const data = await response.json();
-        setProducts(data);
+        setProducts(data.reverse());
+    }
+    const deleteProduct = async (id) => {
+        const response = await fetch(`https://692b046a7615a15ff24e757f.mockapi.io/products/${id}`,{
+            method:'DELETE'
+        });
+        const data = await response.json();
+        console.log('Deleted Data',data);
+        fetchProducts();
     }
     useEffect(function(){
-        console.log('Here are products',products);
         fetchProducts();
     });
     return (
@@ -43,10 +57,6 @@ const Products = () => {
                                 <div className="form-group">
                                     <label>Qunatity</label>
                                     <input type="number" className="form-control" onKeyUp={e => setQauntity(e.target.value)} />
-                                </div>
-                                <div className="form-group">
-                                    <label>Description</label>
-                                    <textarea className="form-control" rows={4} onKeyUp={e => setDescription(e.target.value)} ></textarea>
                                 </div>
                             </div>
                             <div className="card-footer">
@@ -80,9 +90,11 @@ const Products = () => {
                                             <td>{product.quantity}</td>
                                             <td>{product.price} Pkr</td>
                                             <td>
-                                            <button className="btn btn-sm btn-danger m-2">Delete</button>
-                                            <button className="btn btn-sm btn-success">Edit</button>
-                                            </td>
+                                            <button className="btn btn-sm btn-danger m-2" onClick={() => deleteProduct(product.id)}>Delete</button>
+                                            <Link to={`/product/edit/${product.id}`}>
+                                                <button className="btn btn-sm btn-success">Edit</button>
+                                            </Link>
+                                        </td>
                                         </tr>
                                         ))
                                     ) : (

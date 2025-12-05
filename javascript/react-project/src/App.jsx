@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Products from "./components/Products";
 import Contact from "./components/Contact";
+import Edit from "./components/edit";
 function App(){
     var title = "Webeducatorz";
     return (
@@ -15,6 +16,7 @@ function App(){
                     <Route path="/about" element={<About />} />
                     <Route path="/products" element={<Products />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/product/edit/:id" element={<Edit />}/>
                 </Routes>
             </div>
         </div>
