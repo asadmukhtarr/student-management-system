@@ -39,8 +39,8 @@ const Products = () => {
         fetchProducts();
     });
     return (
-        <div>
-           <div className="row">
+        <div className="container mt-3">
+           <div className="row mt-2">
                 <div className="col-lg-4 col-sm-4 col-md-4">
                     <form onSubmit={dataHandle}>
                         <div className="card">
