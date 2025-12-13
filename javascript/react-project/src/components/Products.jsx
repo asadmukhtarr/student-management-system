@@ -5,6 +5,7 @@ const Products = () => {
     const [price,setPrice] = useState("");
     const [qunatity,setQauntity] = useState("");
     const [products,setProducts] = useState([]);
+
     const dataHandle = async (e) => {
         e.preventDefault()
         let product = {
@@ -14,7 +15,7 @@ const Products = () => {
         }
         const response = await fetch(`https://692b046a7615a15ff24e757f.mockapi.io/products`,{
             method:"POST",
-             headers: {
+            headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(product)
@@ -36,6 +37,10 @@ const Products = () => {
         fetchProducts();
     }
     useEffect(function(){
+        const token = localStorage.getItem("token");
+        if(!token){
+            window.location = "/register";   
+        }
         fetchProducts();
     });
     return (
@@ -44,7 +49,7 @@ const Products = () => {
                 <div className="col-lg-4 col-sm-4 col-md-4">
                     <form onSubmit={dataHandle}>
                         <div className="card">
-                            <div className="card-header">Create Product</div>
+                            <div className="card-header">Create Product </div>
                             <div className="card-body">
                                 <div className="form-group">
                                     <label>Title</label>

@@ -15,11 +15,26 @@ export default function Register() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
-
-    // TODO: Add your API POST request here
+    //console.log("Form Submitted:", formData);
+    try {
+       const response = await fetch("http://localhost:8000/api/register",{
+        method:"POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(formData)
+        });
+        const data = await response.json();
+        localStorage.setItem("token",data.token);
+        localStorage.setItem("user",JSON.stringify(data.user));
+        window.location = "/products";
+    } catch (error) {
+      // Handle network errors
+      console.error('Registration error:', error);
+    }
+       // TODO: Add your API POST request here
     // axios.post('/register', formData).then(...)
   };
 

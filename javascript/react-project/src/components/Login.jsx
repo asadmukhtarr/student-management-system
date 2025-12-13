@@ -4,12 +4,30 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // You can call your API here
-    console.log("Email:", email);
-    console.log("Password:", password);
+     //console.log("Form Submitted:", formData);
+    const formData = {
+      email:email,
+      password:password
+    }
+    try {
+       const response = await fetch("http://localhost:8000/api/login",{
+        method:"POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(formData)
+        });
+        const data = await response.json();
+        localStorage.setItem("token",data.token);
+        localStorage.setItem("user",JSON.stringify(data.user));
+       // console.log(localStorage.getItem("user"));
+        window.location = "/products";
+    } catch (error) {
+      // Handle network errors
+      console.error('Login error:', error);
+    }
   };
 
   return (
