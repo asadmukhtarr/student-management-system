@@ -1,0 +1,177 @@
+<%- include('header.ejs') %>
+
+<div class="container mt-4">
+    <h2 class="mb-4">Products Management</h2>
+    
+    <div class="row">
+        <!-- Left Column - Form Card -->
+        <div class="col-lg-4 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title mb-0">Add New Product</h5>
+                </div>
+                <div class="card-body">
+                    <form id="productForm" action="/save/product" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="productTitle" class="form-label">Product Title</label>
+                            <input type="text" class="form-control" name="title" id="productTitle" placeholder="Enter product title" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="productDescription" class="form-label">Description</label>
+                            <textarea class="form-control" name="description" id="productDescription" rows="3" placeholder="Enter product description"></textarea>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="productPrice" class="form-label">Price ($)</label>
+                                <input type="number" class="form-control" name="price" id="productPrice" step="0.01" placeholder="0.00" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="productQuantity" class="form-label">Quantity</label>
+                                <input type="number" class="form-control" name="quantity" id="productQuantity" placeholder="0" required>
+                            </div>
+                        </div>
+                        
+                        <!-- File Upload Input Added Here -->
+                        <div class="mb-3">
+                            <label for="productPicture" class="form-label">Product Image</label>
+                            <input type="file" class="form-control" name="picture" id="productPicture" accept="image/*">
+                            <div class="form-text">Upload JPG, PNG, GIF, or WebP image</div>
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Add Product</button>
+                            <button type="reset" class="btn btn-outline-secondary">Clear Form</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Column - Products Table -->
+        <div class="col-lg-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-success text-white">
+                    <h5 class="card-title mb-0">Product Inventory</h5>
+                </div>
+                <div class="card-body">
+                                       <!-- Optional: Summary Statistics -->
+                    <div class="row mt-4">
+                        <div class="col-md-4">
+                            <div class="alert alert-info">
+                                <h6 class="alert-heading">Total Products</h6>
+                                <p class="mb-0 fs-4">5</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="alert alert-success">
+                                <h6 class="alert-heading">Total Quantity</h6>
+                                <p class="mb-0 fs-4">272</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="alert alert-warning">
+                                <h6 class="alert-heading">Total Value</h6>
+                                <p class="mb-0 fs-4">$455.46</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="table-responsive">
+                        <table class="table table-hover table-striped">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Picture</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Static Data -->
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>
+                                        <img src="https://via.placeholder.com/50" alt="Product 1" class="img-thumbnail" width="50">
+                                    </td>
+                                    <td>Wireless Headphones</td>
+                                    <td>Noise-cancelling Bluetooth headphones with 30h battery</td>
+                                    <td>$89.99</td>
+                                    <td>45</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning me-1">Edit</button>
+                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>
+                                        <img src="https://via.placeholder.com/50" alt="Product 2" class="img-thumbnail" width="50">
+                                    </td>
+                                    <td>Smart Watch</td>
+                                    <td>Fitness tracker with heart rate monitor and GPS</td>
+                                    <td>$199.99</td>
+                                    <td>23</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning me-1">Edit</button>
+                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>
+                                        <img src="https://via.placeholder.com/50" alt="Product 3" class="img-thumbnail" width="50">
+                                    </td>
+                                    <td>USB-C Hub</td>
+                                    <td>7-in-1 USB C Hub with 4K HDMI, Ethernet, USB ports</td>
+                                    <td>$49.99</td>
+                                    <td>78</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning me-1">Edit</button>
+                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>
+                                        <img src="https://via.placeholder.com/50" alt="Product 4" class="img-thumbnail" width="50">
+                                    </td>
+                                    <td>Mechanical Keyboard</td>
+                                    <td>RGB backlit mechanical keyboard with blue switches</td>
+                                    <td>$75.50</td>
+                                    <td>34</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning me-1">Edit</button>
+                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>
+                                        <img src="https://via.placeholder.com/50" alt="Product 5" class="img-thumbnail" width="50">
+                                    </td>
+                                    <td>Portable Power Bank</td>
+                                    <td>20000mAh power bank with PD fast charging</td>
+                                    <td>$39.99</td>
+                                    <td>92</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning me-1">Edit</button>
+                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include('footer.ejs') %>

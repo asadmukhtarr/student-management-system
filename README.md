@@ -161,6 +161,15 @@
 # React Interview Questions?
     - React is librairy or framework? : Librairy ..
     - What is purpose of nodemodules folder? this is the backbone of project ..
+# Mongo DB Guidlines
+    - unstructured database 
+    - BSON Format
+    - No Relationships and NoSQL database
+    - Installation steps 
+	- Download and install GUI Compus MongDB
+	- Download And install powershell of MongoDB
+    - Database ----------------------> Database he kehty hein
+    - Database Table ----------------------------> Collections
 # Routes In ReactJS 
     - Step # 1 : npm install react-router-dom
     - Step # 2 : Add Browser router in index.js
