@@ -2,10 +2,26 @@ const express = require('express');
 const  app = express();
 const multer = require('multer'); // file handling ..
 const path = require('path'); // Folder ..
+const {  MongoClient } = require('mongodb');
+
 app.set("view engine","ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+const url = "mongodb://localhost:27017";
+const client = new MongoClient(url);
+const dbName = "asadmukhtar";
+let db;
+async function connectDB(){
+    try {
+        await client.connect();
+        console.log('MongoDB Connected');
+        db = client.db(dbName);
+    } catch(err) {
+        console.log("Error is",err);
+    }
+}
+connectDB();
 app.use('/uploads',express.static('uploads'));
 
 const storage = multer.diskStorage({
@@ -36,10 +52,17 @@ app.get('/products',(req,res)=> {
     res.render("products");
 })
 // save product ...
-app.post('/save/product', upload.single('picture'),(req, res) => {
-    console.log("Save Product Route Working");
-    console.log("Form Data:", req.body);
-      console.log("Uploaded File:", req.file); // ✅ IMAGE INFO
+app.post('/save/product', upload.single('picture'),async (req, res) => {
+    const product = {
+        title:req.body.title,
+        description:req.body.description,
+        price:req.body.price,
+        quantity:req.body.quantity,
+        image:'uploads/'+req.file.originalname
+    }
+    const collection = db.collection('products');
+    const result = await collection.insertOne(product);
+    console.log("Product Inserted with ID:", result.insertedId);
     res.send('OK');
 });
 // delete product ...
