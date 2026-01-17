@@ -1,51 +1,51 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 const Products = () => {
-    const [title,setTitle] = useState("Iphone 16 Pro Max");
-    const [price,setPrice] = useState("");
-    const [qunatity,setQauntity] = useState("");
-    const [products,setProducts] = useState([]);
+    const [title, setTitle] = useState("Iphone 16 Pro Max");
+    const [price, setPrice] = useState("");
+    const [qunatity, setQauntity] = useState("");
+    const [products, setProducts] = useState([]);
 
     const dataHandle = async (e) => {
         e.preventDefault()
         let product = {
-            title:title,
-            price:price,
-            quantity:qunatity
+            title: title,
+            price: price,
+            quantity: qunatity
         }
-        const response = await fetch(`https://692b046a7615a15ff24e757f.mockapi.io/products`,{
-            method:"POST",
+        const response = await fetch(`https://692b046a7615a15ff24e757f.mockapi.io/products`, {
+            method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(product)
         });
         const data = await response.json();
-        console.log("Product Inserted Succesfully",data);
+        console.log("Product Inserted Succesfully", data);
     }
     const fetchProducts = async () => {
-        const response = await fetch("https://692b046a7615a15ff24e757f.mockapi.io/products");
+        const response = await fetch("http://localhost:3030/api/products");
         const data = await response.json();
         setProducts(data.reverse());
     }
     const deleteProduct = async (id) => {
-        const response = await fetch(`https://692b046a7615a15ff24e757f.mockapi.io/products/${id}`,{
-            method:'DELETE'
+        const response = await fetch(`http://localhost:3030/api/delete/product/${id}`, {
+            method: 'DELETE'
         });
         const data = await response.json();
-        console.log('Deleted Data',data);
+        console.log('Deleted Data', data);
         fetchProducts();
     }
-    useEffect(function(){
-        const token = localStorage.getItem("token");
-        if(!token){
-            window.location = "/register";   
-        }
+    useEffect(function () {
+        // const token = localStorage.getItem("token");
+        // if(!token){
+        //     window.location = "/register";   
+        // }
         fetchProducts();
     });
     return (
         <div className="container mt-3">
-           <div className="row mt-2">
+            <div className="row mt-2">
                 <div className="col-lg-4 col-sm-4 col-md-4">
                     <form onSubmit={dataHandle}>
                         <div className="card">
@@ -89,25 +89,25 @@ const Products = () => {
                                 {
                                     products && products.length > 0 ? (
                                         products.map((product) => (
-                                        <tr key={product.id}>
-                                            <td>{product.id}</td>
-                                            <td>{product.title}</td>
-                                            <td>{product.quantity}</td>
-                                            <td>{product.price} Pkr</td>
-                                            <td>
-                                            <button className="btn btn-sm btn-danger m-2" onClick={() => deleteProduct(product.id)}>Delete</button>
-                                            <Link to={`/product/edit/${product.id}`}>
-                                                <button className="btn btn-sm btn-success">Edit</button>
-                                            </Link>
-                                        </td>
-                                        </tr>
+                                            <tr key={product.id}>
+                                                <td>{product._id}</td>
+                                                <td> <img src={`http://localhost:3030/` + product.image} alt={product.title} height={40} width={40} />    {product.title}</td>
+                                                <td>{product.quantity}</td>
+                                                <td>{product.price} Pkr</td>
+                                                <td>
+                                                    <button className="btn btn-sm btn-danger m-2" onClick={() => deleteProduct(product._id)}>Delete</button>
+                                                    <Link to={`/product/edit/${product.id}`}>
+                                                        <button className="btn btn-sm btn-success">Edit</button>
+                                                    </Link>
+                                                </td>
+                                            </tr>
                                         ))
                                     ) : (
                                         <tr>
                                             <td className="text-center" colSpan={5}>Can't Find Products</td>
                                         </tr>
                                     )
-                                    }
+                                }
 
                             </tbody>
                         </table>

@@ -1,0 +1,64 @@
+<%- include('header.ejs') %>
+
+    <div class="container mt-4">
+        <h2 class="mb-4">Products Management</h2>
+
+        <div class="row">
+            <!-- Left Column - Form Card -->
+            <div class="col-lg-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title mb-0">Edit <%= product.title %>
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="productForm" action="/update/product/<%= product._id %>" method="post"
+                            enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="productTitle" class="form-label">Product Title</label>
+                                <input type="text" class="form-control" value="<%= product.title %>" name="title"
+                                    id="productTitle" placeholder="Enter product title" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="productDescription" class="form-label">Description</label>
+                                <textarea class="form-control" name="description" id="productDescription" rows="3"
+                                    placeholder="Enter product description"><%= product.description %></textarea>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="productPrice" class="form-label">Price ($)</label>
+                                    <input type="number" class="form-control" value="<%= product.price %>" name="price"
+                                        id="productPrice" step="0.01" placeholder="0.00" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="productQuantity" class="form-label">Quantity</label>
+                                    <input type="number" class="form-control" value="<%= product.quantity %>"
+                                        name="quantity" id="productQuantity" placeholder="0" required>
+                                </div>
+                            </div>
+
+                            <!-- File Upload Input Added Here -->
+                            <div class="mb-3">
+                                <label for="productPicture" class="form-label">Product Image</label>
+                                <input type="file" class="form-control" name="picture" id="productPicture"
+                                    accept="image/*">
+                                <div class="form-text">Upload JPG, PNG, GIF, or WebP image</div>
+                                <img src="/<%= product.image %>" height="100px" width="100px"
+                                    alt="<%= product.title %>" />
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">Update Product</button>
+                                <button type="reset" class="btn btn-outline-secondary">Clear Form</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <%- include('footer.ejs') %>
